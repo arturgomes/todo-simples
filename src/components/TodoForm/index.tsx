@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { TodoInterface } from "../../App";
 
 interface TodoFormProps {
-  addTodo: (text: string) => void;
+  addTodo: (todo: TodoInterface) => void;
 }
 export default function TodoForm({ addTodo }: TodoFormProps) {
   const [todo, setTodo] = useState('');
@@ -12,7 +13,8 @@ export default function TodoForm({ addTodo }: TodoFormProps) {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    addTodo(todo);
+    const newTodo: TodoInterface = { id: Date.now(), text: todo, completed: false };
+    addTodo(newTodo);
     setTodo('');
   };
 
