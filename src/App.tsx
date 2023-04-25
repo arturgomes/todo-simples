@@ -1,27 +1,30 @@
 import { useState } from 'react'
-import { v4 as uuidv4 } from 'uuid';
 
 import './App.css'
-import Card from './components/TodoItem';
-import TodoApp from './components/TodoApp';
+import { AdicionarTransacao } from './components/AdicionarTransacao';
+import { ListaTransacoes } from './components/ListaTransacoes';
+import { SomatorioTransacoes } from './components/SomatorioTransacoes';
 
-/**
- * Os campos da interface TodoInterface incluem:
-
-id: um número inteiro que identifica exclusivamente a tarefa na lista.
-text: uma string que contém o texto descritivo da tarefa.
-completed: um booleano que indica se a tarefa foi concluída ou não.
- */
-export interface TodoInterface {
-  id: number;
-  text: string;
-  completed: boolean;
+export interface Transacao {
+  descricao: string
+  tipo: 'receita' | 'despesa'
+  data: Date
+  valor: number
 }
 
 function App() {
+  const [transacoes, setTransacoes] = useState<Transacao[]>([]);
+
+  function adicionarTransacao(transacao: Transacao) {
+    setTransacoes([...transacoes, transacao]);
+  }
 
   return (
-    <TodoApp />
+    <div>
+      <AdicionarTransacao onAddTransacao={adicionarTransacao} />
+      <ListaTransacoes transacoes={transacoes} />
+      <SomatorioTransacoes transacoes={transacoes} />
+    </div>
   );
 }
 
