@@ -24,12 +24,20 @@ export default function TodoApp() {
       return todo
     }))
   }
+  const editarTarefa = (todoId: number, novoText: string) => {
+    setTodos(todos => todos.map(todo => {
+      if (todo.id === todoId) {
+        return { ...todo, text: novoText }
+      }
+      return todo
+    }))
+  }
   console.log(todos)
   return (
     <div>
       <h1>Lista de Tarefas</h1>
       <TodoForm addTodo={addTodo} />
-      <TodoList todos={todos} deleteTodo={deleteTodo} markDone={markDone} />
+      <TodoList todos={todos} deleteTodo={deleteTodo} markDone={markDone} editarTarefa={editarTarefa} />
     </div>
   );
 }
