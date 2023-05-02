@@ -12,7 +12,7 @@ export default function TodoForm({ addTodo }: TodoFormProps) {
   };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+    event.preventDefault(); // evita que a tela atualize (de refresh)
     const newTodo: TodoInterface = { id: Date.now(), text: todo, completed: false };
     addTodo(newTodo);
     setTodo('');

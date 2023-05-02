@@ -8,13 +8,13 @@ export default function TodoApp() {
   const [todos, setTodos] = useState<TodoInterface[]>([]);
 
   const addTodo = (newTodo: TodoInterface) => {
-    // TODO: Implementar a função de adicionar nova tarefa à lista
+    setTodos(todos => [newTodo, ...todos])
   }
 
   const deleteTodo = (todoId: TodoInterface) => {
     // TODO: Implementar a função de deletar tarefa da lista
   }
-
+  console.log(todos)
   return (
     <div>
       <h1>Lista de Tarefas</h1>
