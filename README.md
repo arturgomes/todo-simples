@@ -57,3 +57,13 @@ Aqui estão as tarefas que você precisa completar para finalizar o aplicativo:
 - Para editar uma tarefa existente, você pode usar uma caixa de diálogo modal para exibir um formulário que permita ao usuário editar a tarefa. Use a propriedade `onClick` do botão de edição em `TodoItem` para chamar uma função que exibe a caixa de diálogo modal
 - Para excluir uma tarefa, use a propriedade `onClick` do botão de exclusão em `TodoItem` para chamar uma função que remove a tarefa da lista de tarefas
 - Lembre-se de seguir as boas práticas de codificação, como nomear variáveis e funções de forma clara e consistente, manter o código bem formatado e usar comentários quando necessário
+
+
+
+# Quando já tivermos isso, vamos mudar!
+
+## Vamos tentar ver um pouco de Material-UI e Tailwind?
+
+https://tailwindcss.com/docs/guides/vite
+
+## Vamos alterar essa tarefa para um controle de receita e despesa?
