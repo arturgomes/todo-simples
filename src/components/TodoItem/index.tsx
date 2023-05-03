@@ -22,17 +22,20 @@ export default function TodoItem(props: any) {
     editarTarefa(todo.id, event.target.value)
   };
   return (
-    <li>
-      {todo.text}
-      <div>
-
-        <button onClick={handleEditar}>{editar ? "Fechar" : "Editar"}</button>
-        <button onClick={handleDelete}>X</button>
-        <button onClick={handleMark}>{todo.completed ? "Cancele" : "Conclua"}</button>
+    <li className="border rounded bg-gray-700 p-2">
+      <div className="flex flex-row space-between gap-6">
+        <span className="text-gray-200">{todo.text}</span>
+        <div>
+          <button className="bg-gray-600 text-gray-200 p-1 rounded-l border hover:bg-gray-800 " onClick={handleEditar}>{editar ? "Fechar" : "Editar"}</button>
+          <button className="bg-gray-600 text-gray-200 p-1 border hover:bg-gray-800" onClick={handleDelete}>X</button>
+          <button className="bg-gray-600 text-gray-200 p-1 rounded-r border hover:bg-gray-800" onClick={handleMark}>{todo.completed ? "Cancele" : "Conclua"}</button>
+        </div>
       </div>
       {editar &&
         (
-          <div>
+          <div className="mt-2">
+            <span className="text-gray-300">Tarefa editada:</span>
+
             <input type="text" value={novoValor} onChange={handleChange} />
           </div>
         )}

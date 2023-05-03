@@ -18,7 +18,9 @@ export interface TodoInterface {
 function App() {
 
   return (
-    <TodoApp />
+    <div className="flex justify-center item-center bg-gray-900 w-screen h-screen">
+      <TodoApp />
+    </div>
   );
 }
 

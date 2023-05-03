@@ -34,8 +34,8 @@ export default function TodoApp() {
   }
   console.log(todos)
   return (
-    <div>
-      <h1>Lista de Tarefas</h1>
+    <div className="mt-8 p-8 min-h-10 bg-gray-800 border-2 rounded-lg">
+      <h1 className="text-gray-200 text-xl mb-3">Lista de Tarefas</h1>
       <TodoForm addTodo={addTodo} />
       <TodoList todos={todos} deleteTodo={deleteTodo} markDone={markDone} editarTarefa={editarTarefa} />
     </div>

@@ -19,12 +19,15 @@ export default function TodoForm({ addTodo }: TodoFormProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Nova tarefa:
-        <input type="text" value={todo} onChange={handleChange} />
-      </label>
-      <button type="submit">Adicionar</button>
+    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+      <div className="flex flex-row gap-3 items-center">
+
+        <label className="text-gray-200">
+          Nova tarefa:
+        </label>
+        <input className="bg-gray-600 border rounded border-gray-400 p-1 text-gray-300" type="text" value={todo} onChange={handleChange} />
+      </div>
+      <button className="bg-purple-600 border-2 rounded py-1 text-gray-200" type="submit">Adicionar</button>
     </form>
   );
 }
