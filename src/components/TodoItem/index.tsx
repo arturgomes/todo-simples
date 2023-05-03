@@ -23,9 +23,12 @@ export default function TodoItem(props: any) {
   };
   return (
     <li>
+      {todo.text}
       <div>
 
-        {todo.text} <button onClick={handleEditar}>{editar ? "Fechar" : "Editar"}</button><button onClick={handleDelete}>X</button><button onClick={handleMark}>{todo.completed ? "Cancele" : "Conclua"}</button>
+        <button onClick={handleEditar}>{editar ? "Fechar" : "Editar"}</button>
+        <button onClick={handleDelete}>X</button>
+        <button onClick={handleMark}>{todo.completed ? "Cancele" : "Conclua"}</button>
       </div>
       {editar &&
         (
