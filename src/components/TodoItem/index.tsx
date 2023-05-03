@@ -24,7 +24,7 @@ export default function TodoItem(props: any) {
   return (
     <li className="border rounded bg-gray-700 p-2">
       <div className="flex flex-row space-between gap-6">
-        <span className="text-gray-200">{todo.text}</span>
+        {todo.completed ? (<span className="text-gray-200 line-through">{todo.text}</span>) : (<span className="text-gray-200">{todo.text}</span>)}
         <div>
           <button className="bg-gray-600 text-gray-200 p-1 rounded-l border hover:bg-gray-800 " onClick={handleEditar}>{editar ? "Fechar" : "Editar"}</button>
           <button className="bg-gray-600 text-gray-200 p-1 border hover:bg-gray-800" onClick={handleDelete}>X</button>
